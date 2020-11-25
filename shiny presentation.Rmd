@@ -1,0 +1,45 @@
+---
+title: "Word Prediction App"
+author: "Siddhesh pote"
+date: "22/11/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Task of the project
+
+
+- Step-1 - load the given data set and perform the cleaning actions 
+- Step-2- Perform some exploratory analysis 
+- Step-3- Tokenize te data(i.e split the sentences into n-grams as per requirement)
+- Step-4- Create a model for prediction(in our case we used Katz backoff model)
+- Step-5- Create a shiny app that demonstrates the word prediction by our model
+- step 6- create a presentation that demonstrates a short presentation on whatever is done in the project
+
+## Cleaning and loading
+
+1. The corpus for the given project can be here
+[here](https://d396qusza40orc.cloudfront.net/dsscapstone/dataset/Coursera-SwiftKey.zip)
+2. The loading of the data and the exploratory analysis done can be found [here](https://rpubs.com/SiD92/690013)
+3. Took around 10000 lines from the data set to create a dictionary...
+4. Cleaning of the data required removing the extra white spaces and removing numbers, punctuation, symbols, URL, hypens etc...
+5. Three tables were formed of unigram, bi-gram and tri-gram and the frequency was displayed with the help of barplot and wordclouds
+
+## Data preparation and Model preparation
+1. The app used Katz - backoff algorithm for predict the next words based on the previous words... More about Katz backoff algorithm can be found on [wikipedia page](https://en.wikipedia.org/wiki/Katz%27s_back-off_model)
+2. The Rweka, tm, Wordcloud and ggplot2 were the most helpful packages while creating this project...
+3. The basic logic used while creating the model was that the probabilty of occurance of the next word basically depends on the probability of occurance of the last word of the input and not the probablity of occurance of the whole sentence..
+4. The accuracy can be increased if the sample size take was increased.. The accuracy of the app that was made was in the range of 10-15% but only a small sample could be taken from the data it was sufficient enough to create the app...
+
+
+
+## About the application
+1. The shiny app that predicts the next word can be found [here](https://sid92.shinyapps.io/word_prediction_app/)
+2. The shiny app is a simple application that predicts the next word as you type the sentence... it only predicts one word and has no complicated interface
+
+![](C:/Users/Siddhesha/Desktop/New folder/ss.png)
+
+
